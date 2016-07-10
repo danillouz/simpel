@@ -1,2 +1,2 @@
-# lego
-Minimal UI library.
+# Lego
+Minimalistic JavaScript UI library.

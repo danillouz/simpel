@@ -1,0 +1,38 @@
+{
+  "name": "lego",
+  "version": "0.0.1",
+  "description": "Minimalistic JavaScript UI library.",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint --color src --ext .js",
+    "test": "mocha --require tests.setup.js src/*.spec.js*",
+    "test:watch": "npm test -- --watch"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danillouz/lego.git"
+  },
+  "keywords": [
+    "amazing"
+  ],
+  "author": "Daniel Illouz",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/danillouz/lego/issues"
+  },
+  "homepage": "https://github.com/danillouz/lego#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "debug": "^2.2.0",
+    "eslint": "^3.0.1",
+    "eslint-config-danistyle": "^1.0.0",
+    "jsdom": "^9.4.1",
+    "mocha": "^2.5.3",
+    "pre-commit": "^1.1.3",
+    "sinon": "^1.17.4"
+  }
+}
