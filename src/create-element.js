@@ -48,6 +48,10 @@ function createElement(
 		});
 
 	children
+		.reduce(
+			(previous, current) => previous.concat(current),
+			[ ]
+		)
 		.forEach(child => {
 			const isText = _isText(child);
 
