@@ -16,15 +16,15 @@ function _isText(text) {
 }
 
 function createElement(
-	type = throwError('A `type` arguments is required to create an element. For example \'div\'.'),
-	attributes,
+	type = throwError('A `type` arguments is required to create an Element. For example \'div\'.'),
+	props,
 	...children
 ) {
 	const isFunction = type instanceof Function;
 	const isElement = type instanceof window.Node;
 
 	if (isFunction) {
-		const el = type(attributes);
+		const el = type(props);
 
 		return el;
 	}
@@ -34,7 +34,7 @@ function createElement(
 	}
 
 	const element = document.createElement(type);
-	const attr = attributes || { };
+	const attr = props || { };
 	const attrKeys = Object.keys(attr);
 
 	attrKeys.forEach(name => {

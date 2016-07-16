@@ -5,17 +5,17 @@ function throwError(message) {
 }
 
 /**
- * Renders an HTML by appending it to a specific
- * HTML target.
+ * Renders a Simple Element into the DOM in the supplied
+ * container.
  *
- * @param  {Object} element - the HTML element to be appended
- * @param  {Object} target  - the targeted HTML element
+ * @param  {Object} element   - the Simple element to be appended
+ * @param  {Object} container - the targeted HTML element
  */
 function render(
-	element = throwError('Provide an element. For example `<div>Hello World!</div>`'),
-	target = throwError('Provide a target to append HTML to.')
+	element = throwError('Provide an Element. For example `<div>Hello World!</div>`'),
+	container = throwError('Provide a container to append an Element to.')
 ) {
-	target.appendChild(element);
+	container.appendChild(element);
 }
 
 module.exports = render;

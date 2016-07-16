@@ -9,7 +9,7 @@ describe('createElement(type, attributes, children)', function () {
 	it('throws an Error with missing `type` argument', function () {
 		assert.throws(
 			createElement,
-			'A `type` arguments is required to create an element. For example \'div\'.'
+			'A `type` arguments is required to create an Element. For example \'div\'.'
 		);
 	});
 
