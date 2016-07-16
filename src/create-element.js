@@ -2,6 +2,8 @@
 
 const eventsMap = require('./events-map');
 
+const refsMap = Object.create(null);
+
 function throwError(message) {
 	throw new Error(message);
 }
@@ -24,7 +26,7 @@ function createElement(
 	if (isFunction) {
 		const el = type(attributes);
 
-		return createElement(el);
+		return el;
 	}
 
 	if (isElement) {
@@ -33,19 +35,35 @@ function createElement(
 
 	const element = document.createElement(type);
 	const attr = attributes || { };
+	const attrKeys = Object.keys(attr);
 
-	Object
-		.keys(attr)
-		.forEach(name => {
-			const value = attr[name];
-			const eventName = eventsMap[name];
+	attrKeys.forEach(name => {
+		const isRef = name === 'ref';
+		const refName = attr[name];
 
-			if (eventName) {
-				element.addEventListener(eventName, value);
-			} else {
-				element.setAttribute(name, value);
-			}
-		});
+		if (isRef) {
+			refsMap[refName] = element;
+		}
+	});
+
+	const context = Object.assign(
+		{ },
+		{ refs: refsMap }
+	);
+
+	attrKeys.forEach(name => {
+		const value = attr[name];
+		const eventName = eventsMap[name];
+
+		if (eventName) {
+			element.addEventListener(
+				eventName,
+				value.bind(context)
+			);
+		} else {
+			element.setAttribute(name, value);
+		}
+	});
 
 	children
 		.reduce(
