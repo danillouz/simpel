@@ -1,6 +1,6 @@
 {
   "name": "simpel",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Minimalistic JavaScript UI library.",
   "main": "lib/simpel.js",
   "scripts": {
@@ -9,8 +9,8 @@
     "test:watch": "npm test -- --watch",
     "clean": "rimraf lib",
     "build:dev": "npm run clean && webpack -d --config webpack.config.dev.js",
-	"build:prod": "npm run clean && webpack -p --config webpack.config.prod.js",
-	"prepublish": "npm run test && npm run build:prod"
+    "build:prod": "npm run clean && webpack -p --config webpack.config.prod.js",
+    "prepublish": "npm run test && npm run build:prod"
   },
   "pre-commit": [
     "lint",
