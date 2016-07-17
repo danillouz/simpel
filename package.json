@@ -1,6 +1,6 @@
 {
   "name": "simpel",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Minimalistic JavaScript UI library.",
   "main": "lib/index.js",
   "scripts": {
