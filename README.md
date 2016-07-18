@@ -1,4 +1,17 @@
 # ✨ SimpEl ✨
+[![NPM Version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![API Doc][doclets-image]][doclets-url]
+
+[npm-image]: https://img.shields.io/badge/npm-v0.5.0-blue.svg
+[npm-url]: https://www.npmjs.com/package/simpel
+[travis-image]: https://travis-ci.org/danillouz/simpel.svg?branch=master
+[travis-url]: https://travis-ci.org/danillouz/simpel
+[doclets-image]: https://doclets.io/danillouz/simpel/master.svg
+[doclets-url]: https://doclets.io/danillouz/simpel/master
+
+A simple way to create and render HTML Elements.
+
 > Minimalistic, zero dependency, only 4KB, JavaScript UI
 library!
 
@@ -19,6 +32,9 @@ one to [render](#renderelement-container) them.
 - [Interface](#interface)
 	* [Create Element](#createelementtype-props-children)
 	* [Render](#renderelement-container)
+- [SimpEl ❤️ JSX](#simpel-️-jsx)
+	* [How to transform](#how-to-transform)
+	* [Caveats](#caveats)
 - [Examples](#examples)
 	+ Vanilla JavaScript
 		* [Create and render a list](#create-and-render-a-list)
@@ -39,11 +55,12 @@ almost static HTML pages with non complex UX.
 
 If you need something more powerful, then I recommend you
 have a look at the amazing [React](https://facebook.github.io/react/)
-library. `SimpEl` is heavily inspired by it, because React
-is awesome.
+library. The `SimpEl` API is heavily inspired by it, because
+React is awesome.
 
 # Requirements
-You need [Node](https://nodejs.org/en/) version `4` or greater.
+You need [Node](https://nodejs.org/en/) version `4` or
+greater.
 
 # Install
 ```
@@ -79,14 +96,14 @@ Creates an HTML [Element](https://developer.mozilla.org/en-US/docs/Web/API/Eleme
 HTML [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element).
 
 ## render(element, container)
-Renders a `SimpEl` Element into the DOM in the supplied
+Renders an HTML Element into the DOM in the supplied
 `container`.
 
 #### Arguments
 | NAME | TYPE | DESCRIPTION | REQUIRED |
 | :---: | :---: | :--- | :---: |
-| element | Element | The `SimpEl` Element to be appended to the DOM. | Yes |
-| container | Element | The HTML container into which the `SimpEl` Element will be rendered. | Yes |
+| element | Element | The HTML Element to be appended to the DOM. | Yes |
+| container | Element | The HTML container into which the HTML Element will be rendered. | Yes |
 
 #### Returns
 Void.
@@ -134,7 +151,8 @@ const profile = Simpel.createElement(
 
 This can be done with the [Babel React JSX Transform Plugin](https://babeljs.io/docs/plugins/transform-react-jsx/).
 
-First install it:
+## How to transform
+First install the transform plugin:
 
 ```
 npm i -D babel-plugin-transform-react-jsx
@@ -142,7 +160,7 @@ npm i -D babel-plugin-transform-react-jsx
 
 Then configure the plugin in your `.babelrc` file:
 
-```js
+```
 {
 	"plugins": [
 		[
@@ -158,6 +176,7 @@ Then configure the plugin in your `.babelrc` file:
 _Note that you need to change the **pragma** to
 `Simpel.createElement`._
 
+## Caveats
 Always make sure to have the `SimpEl` library _in scope_
 when defining JSX Components. If omitted, the transformed
 JSX will **not** be able to execute:
@@ -293,6 +312,76 @@ Simpel.render(
 	document.getElementById('root')
 );
 ```
+
+The following events are supported:
+
+| EVENT NAME | ATTRIBUTE NAME |
+| :--- | :--- |
+| abort | onAbort |
+| animationstart | onAnimationStart |
+| animationiteration | onAnimationIteration |
+| animationend | onAnimationEnd |
+| blur | onBlur |
+| canplay | onCanPlay |
+| canplaythrough | onCanPlayThrough |
+| change | onChange |
+| click | onClick |
+| contextmenu | onContextMenu |
+| copy | onCopy |
+| cut | onCut |
+| dblclick | onDoubleClick |
+| drag | onDrag |
+| dragend | onDragEnd |
+| dragenter | onDragEnter |
+| dragexit | onDragExit |
+| dragleave | onDragLeave |
+| dragover | onDragOver |
+| dragstart | onDragStart |
+| drop | onDrop |
+| durationchange | onDurationChange |
+| emptied | onEmptied |
+| encrypted | onEncrypted |
+| ended | onEnded |
+| error | onError |
+| focus | onFocus |
+| input | onInput |
+| invalid | onInvalid |
+| keydown | onKeyDown |
+| keypress | onKeyPress |
+| keyup | onKeyUp |
+| load | onLoad |
+| loadeddata | onLoadedData |
+| loadedmetadata | onLoadedMetadata |
+| loadstart | onLoadStart |
+| pause | onPause |
+| play | onPlay |
+| playing | onPlaying |
+| progress | onProgress |
+| mousedown | onMouseDown |
+| mouseenter | onMouseEnter |
+| mouseleave | onMouseLeave |
+| mousemove | onMouseMove |
+| mouseout | onMouseOut |
+| mouseover | onMouseOver |
+| mouseup | onMouseUp |
+| paste | onPaste |
+| ratechange | onRateChange |
+| reset | onReset |
+| scroll | onScroll |
+| seeked | onSeeked |
+| seeking | onSeeking |
+| submit | onSubmit |
+| stalled | onStalled |
+| suspend | onSuspend |
+| timeupdate | onTimeUpdate |
+| transitionend | onTransitionEnd |
+| touchcancel | onTouchCancel |
+| touchend | onTouchEnd |
+| touchmove | onTouchMove |
+| touchstart | onTouchStart |
+| volumechange | onVolumeChange |
+| waiting | onWaiting |
+| wheel | onWheel |
 
 ## Use `refs` to reference other Components
 ```js

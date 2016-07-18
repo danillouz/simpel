@@ -1,19 +1,23 @@
 'use strict';
 
-function throwError(message) {
-	throw new Error(message);
-}
+const helpers = require('./helpers');
+
+const _throwError = helpers.throwError;
 
 /**
- * Renders a Simple Element into the DOM in the supplied
+ * Renders an HTML Element into the DOM in the supplied
  * container.
  *
- * @param  {Object} element   - the Simple element to be appended
- * @param  {Object} container - the targeted HTML element
+ * @param  {Object} element   - the Simple element to be appended to the DOM
+ * @param  {Object} container - the HTML container into which the HTML Element will be rendered.
  */
 function render(
-	element = throwError('Provide an Element. For example `<div>Hello World!</div>`'),
-	container = throwError('Provide a container to append an Element to.')
+	element = _throwError(
+		'Provide an Element. For example `<div>Hello World!</div>`'
+	),
+	container = _throwError(
+		'Provide a container to append an Element to.'
+	)
 ) {
 	container.appendChild(element);
 }

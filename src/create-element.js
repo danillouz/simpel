@@ -1,22 +1,26 @@
 'use strict';
 
 const eventsMap = require('./events-map');
+const helpers = require('./helpers');
 
-const refsMap = Object.create(null);
+const REFS_MAP = Object.create(null);
 
-function throwError(message) {
-	throw new Error(message);
-}
+const _throwError = helpers.throwError;
+const _isText = helpers.isText;
 
-function _isText(text) {
-	const isString = typeof text === 'string';
-	const isNumber = typeof text === 'number';
-
-	return isString || isNumber;
-}
-
+/**
+ * Creates an HTML Element.
+ *
+ * @param  {String|Function|Element} type  	  - the Element to be created
+ * @param  {Object} 				 props 	  - contains the properties of a `SimpEl` Component as key value pairs
+ * @param  {Array|Element|String}    children - the child Elements of a `SimpEl` Component
+ *
+ * @return {Object} HTML Element
+ */
 function createElement(
-	type = throwError('A `type` arguments is required to create an Element. For example \'div\'.'),
+	type = _throwError(
+		'A `type` arguments is required to create an Element. For example \'div\'.'
+	),
 	props,
 	...children
 ) {
@@ -42,13 +46,13 @@ function createElement(
 		const refName = attr[name];
 
 		if (isRef) {
-			refsMap[refName] = element;
+			REFS_MAP[refName] = element;
 		}
 	});
 
 	const context = Object.assign(
 		{ },
-		{ refs: refsMap }
+		{ refs: REFS_MAP }
 	);
 
 	attrKeys.forEach(name => {

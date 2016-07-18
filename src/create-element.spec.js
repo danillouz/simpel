@@ -24,17 +24,15 @@ describe('createElement(type, attributes, children)', function () {
 
 	it('can append children to an HTML element', function () {
 
-		/**
-		 * Mock HTML has the following structure:
-		 *
-		 * node nr. 3 | <div>
-		 * node nr. 2 |    <p>
-		 * node nr. 1 |        Hello World!
-		 * node nr. 2 |    </p>
-		 * node nr. 3 | </div>
-		 *
-		 * Note that tests are written _inside out_.
-		 */
+		// Mock HTML has the following structure:
+		//
+		// node nr. 3 | <div>
+		// node nr. 2 |    <p>
+		// node nr. 1 |        Hello World!
+		// node nr. 2 |    </p>
+		// node nr. 3 | </div>
+		//
+		// Note that tests are written _inside out_.
 
 		// Create node number 3.
 		const text = 'Hello World!';

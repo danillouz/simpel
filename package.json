@@ -1,7 +1,7 @@
 {
   "name": "simpel",
   "version": "0.4.0",
-  "description": "Minimalistic JavaScript UI library.",
+  "description": "A simple way to create and render HTML Elements.",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint --color src --ext .js",
@@ -17,7 +17,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danillouz/lego.git"
+    "url": "git+https://github.com/danillouz/simpel.git"
   },
   "keywords": [
     "simple",
@@ -28,16 +28,16 @@
   "author": "Daniel Illouz",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/danillouz/lego/issues"
+    "url": "https://github.com/danillouz/simpel/issues"
   },
-  "homepage": "https://github.com/danillouz/lego#readme",
+  "homepage": "https://github.com/danillouz/simpel#readme",
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-preset-es2015": "^6.9.0",
     "chai": "^3.5.0",
     "debug": "^2.2.0",
     "eslint": "^3.0.1",
-    "eslint-config-danistyle": "^1.0.1",
+    "eslint-config-danistyle": "^1.0.3",
     "jsdom": "^9.4.1",
     "mocha": "^2.5.3",
     "pre-commit": "^1.1.3",
