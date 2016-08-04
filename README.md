@@ -1,10 +1,7 @@
 # ✨ SimpEl ✨
-[![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 [![API Doc][doclets-image]][doclets-url]
 
-[npm-image]: https://img.shields.io/badge/npm-v0.5.0-blue.svg
-[npm-url]: https://www.npmjs.com/package/simpel
 [travis-image]: https://travis-ci.org/danillouz/simpel.svg?branch=master
 [travis-url]: https://travis-ci.org/danillouz/simpel
 [doclets-image]: https://doclets.io/danillouz/simpel/master.svg
