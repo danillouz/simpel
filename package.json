@@ -1,6 +1,6 @@
 {
   "name": "simpel",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "A simple way to create and render HTML Elements.",
   "main": "lib/index.js",
   "scripts": {
