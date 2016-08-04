@@ -30,14 +30,10 @@ function createElement(
 	if (isFunction) {
 		const el = type(props);
 
-		return el;
+		return createElement(el, null, children);
 	}
 
-	if (isElement) {
-		return type;
-	}
-
-	const element = document.createElement(type);
+	const element = isElement ? type: document.createElement(type);
 	const attr = props || { };
 	const attrKeys = Object.keys(attr);
 
